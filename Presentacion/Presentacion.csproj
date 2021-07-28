@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FCA31879-35CE-4069-A46E-D7FFA8950415}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\Generico.cs" />
+    <Compile Include="Controlador\Localidad.cs" />
+    <Compile Include="Modelo\Localidad.cs" />
+    <Compile Include="Modelo\Provincia.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Auto\Color\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Color\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Color\Indice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Color\Indice.Designer.cs">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Color\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Color\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Indice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Indice.Designer.cs">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Panel.Designer.cs">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Provincia\Indice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Provincia\Indice.Designer.cs">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Provincia\Localidad\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Provincia\Localidad\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Provincia\Localidad\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Provincia\Localidad\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Provincia\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Provincia\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\Auto\Color\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Auto\Color\Indice.resx">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Auto\Color\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Auto\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Auto\Indice.resx">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Auto\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Panel.resx">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Provincia\Indice.resx">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Provincia\Localidad\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Provincia\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vista\Auto\Marca\" />
+    <Folder Include="Vista\Empleado\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{6a8fd521-9d61-485e-b905-2c2d4ae209f8}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
