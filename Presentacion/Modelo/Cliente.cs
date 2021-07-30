@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Presentacion.Modelo
 {
-    public class Provincia
+    public class Cliente : Persona
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public Localidad Localidad { get; set}
+        public int Numero { get; set; }
     }
 }

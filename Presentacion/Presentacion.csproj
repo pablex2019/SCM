@@ -50,8 +50,24 @@
   <ItemGroup>
     <Compile Include="Controlador\Generico.cs" />
     <Compile Include="Controlador\Localidad.cs" />
+    <Compile Include="Modelo\Anticipo.cs" />
+    <Compile Include="Modelo\Auto.cs" />
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\Color.cs" />
+    <Compile Include="Modelo\Cuota.cs" />
+    <Compile Include="Modelo\Empleado.cs" />
+    <Compile Include="Modelo\Financiacion.cs" />
     <Compile Include="Modelo\Localidad.cs" />
+    <Compile Include="Modelo\Marca.cs" />
+    <Compile Include="Modelo\Modelo.cs" />
+    <Compile Include="Modelo\OpcionFinanciacion.cs" />
+    <Compile Include="Modelo\Pedido.cs" />
+    <Compile Include="Modelo\Perfil.cs" />
+    <Compile Include="Modelo\Persona.cs" />
     <Compile Include="Modelo\Provincia.cs" />
+    <Compile Include="Modelo\Ubicacion.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Venta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\Auto\Color\Editar.cs">

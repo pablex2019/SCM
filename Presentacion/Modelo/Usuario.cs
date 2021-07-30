@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Presentacion.Modelo
 {
-    public class Provincia
+    public class Usuario
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string Nombre { get; set; }
-        public Localidad Localidad { get; set}
+        public string Clave { get; set; }
+        public Perfil Perfil { get; set; }
+        public Empleado Empleado { get; set; }
     }
 }
