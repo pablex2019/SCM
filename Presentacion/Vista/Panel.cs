@@ -20,10 +20,12 @@ namespace Presentacion.Vista
             Generico = new Controlador.Generico();
         }
 
+        #region Auto
         private void menuAutos_Click(object sender, EventArgs e)
         {
             new Vista.Auto.Indice().Show();
         }
+        #endregion
 
         private void menuSalir_Click(object sender, EventArgs e)
         {

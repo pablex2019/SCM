@@ -13,6 +13,6 @@ namespace Presentacion.Modelo
         public float Precio { get; set; }
         public Marca Marca { get; set; }
         public Color Color { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
     }
 }

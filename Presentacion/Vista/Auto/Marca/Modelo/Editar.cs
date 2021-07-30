@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion.Vista.Auto
+namespace Presentacion.Vista.Auto.Marca.Modelo
 {
-    public partial class Indice : Form
+    public partial class Editar : Form
     {
-        public Indice()
+        public Editar()
         {
             InitializeComponent();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Vista.Auto.Nuevo nuevo = new Nuevo();
-            nuevo.Show();
         }
     }
 }

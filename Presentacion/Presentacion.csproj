@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\Auto.cs" />
     <Compile Include="Controlador\Generico.cs" />
     <Compile Include="Controlador\Localidad.cs" />
     <Compile Include="Modelo\Anticipo.cs" />
@@ -56,18 +57,18 @@
     <Compile Include="Modelo\Color.cs" />
     <Compile Include="Modelo\Cuota.cs" />
     <Compile Include="Modelo\Empleado.cs" />
-    <Compile Include="Modelo\Financiacion.cs" />
+    <Compile Include="Modelo\Venta.cs" />
     <Compile Include="Modelo\Localidad.cs" />
     <Compile Include="Modelo\Marca.cs" />
     <Compile Include="Modelo\Modelo.cs" />
-    <Compile Include="Modelo\OpcionFinanciacion.cs" />
+    <Compile Include="Modelo\OpcionesFinanciacion.cs" />
     <Compile Include="Modelo\Pedido.cs" />
     <Compile Include="Modelo\Perfil.cs" />
     <Compile Include="Modelo\Persona.cs" />
     <Compile Include="Modelo\Provincia.cs" />
     <Compile Include="Modelo\Ubicacion.cs" />
     <Compile Include="Modelo\Usuario.cs" />
-    <Compile Include="Modelo\Venta.cs" />
+    <Compile Include="Modelo\LineaDeVentas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\Auto\Color\Editar.cs">
@@ -99,6 +100,42 @@
     </Compile>
     <Compile Include="Vista\Auto\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Indice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Indice.Designer.cs">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Modelo\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Modelo\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Modelo\Indice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Modelo\Indice.Designer.cs">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Modelo\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Modelo\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Auto\Marca\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Auto\Nuevo.cs">
       <SubType>Form</SubType>
@@ -199,7 +236,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Vista\Auto\Marca\" />
     <Folder Include="Vista\Empleado\" />
   </ItemGroup>
   <ItemGroup>
