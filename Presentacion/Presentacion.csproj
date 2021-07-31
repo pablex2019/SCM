@@ -49,8 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Auto.cs" />
+    <Compile Include="Controlador\Color.cs" />
     <Compile Include="Controlador\Generico.cs" />
     <Compile Include="Controlador\Localidad.cs" />
+    <Compile Include="Controlador\Marca.cs" />
+    <Compile Include="Controlador\Modelo.cs" />
     <Compile Include="Modelo\Anticipo.cs" />
     <Compile Include="Modelo\Auto.cs" />
     <Compile Include="Modelo\Cliente.cs" />
@@ -77,12 +80,6 @@
     <Compile Include="Vista\Auto\Color\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Auto\Color\Indice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Auto\Color\Indice.Designer.cs">
-      <DependentUpon>Indice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Auto\Color\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,28 +104,16 @@
     <Compile Include="Vista\Auto\Marca\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Auto\Marca\Indice.cs">
+    <Compile Include="Vista\Auto\Modelo\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Auto\Marca\Indice.Designer.cs">
-      <DependentUpon>Indice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Auto\Marca\Modelo\Editar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Auto\Marca\Modelo\Editar.Designer.cs">
+    <Compile Include="Vista\Auto\Modelo\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Auto\Marca\Modelo\Indice.cs">
+    <Compile Include="Vista\Auto\Modelo\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Auto\Marca\Modelo\Indice.Designer.cs">
-      <DependentUpon>Indice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Auto\Marca\Modelo\Nuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Auto\Marca\Modelo\Nuevo.Designer.cs">
+    <Compile Include="Vista\Auto\Modelo\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Auto\Marca\Nuevo.cs">
@@ -191,9 +176,6 @@
     <EmbeddedResource Include="Vista\Auto\Color\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Auto\Color\Indice.resx">
-      <DependentUpon>Indice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Auto\Color\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Auto\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Auto\Modelo\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Auto\Marca\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Auto\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>

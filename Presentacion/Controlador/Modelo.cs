@@ -8,17 +8,17 @@ using System.Windows.Forms;
 
 namespace Presentacion.Controlador
 {
-    public class Color
+    public class Modelo
     {
         #region Archivo
         private string Archivo { get; set; }
         private Datos.GestorArchivosTexto GestorArchivosTexto { get; set; }
-        private List<Presentacion.Modelo.Color> Colores { get; set; }
-        private string DatosColores { get; set; }
+        private List<Presentacion.Modelo.Modelo> Modelos { get; set; }
+        private string DatosModelos { get; set; }
         #endregion
         private Controlador.Generico Generico;
 
-        public Color(string _Archivo)
+        public Modelo(string _Archivo)
         {
             this.Archivo = _Archivo;
             this.GestorArchivosTexto = new Datos.GestorArchivosTexto(this.Archivo);
@@ -26,37 +26,37 @@ namespace Presentacion.Controlador
         }
         private void Leer()
         {
-            this.DatosColores = this.GestorArchivosTexto.Leer();
-            this.Colores = this.DatosColores?.Length > 0 ? JsonConvert.DeserializeObject<List<Presentacion.Modelo.Color>>(this.DatosColores) : new List<Presentacion.Modelo.Color>();
+            this.DatosModelos = this.GestorArchivosTexto.Leer();
+            this.Modelos = this.DatosModelos?.Length > 0 ? JsonConvert.DeserializeObject<List<Presentacion.Modelo.Modelo>>(this.DatosModelos) : new List<Presentacion.Modelo.Modelo>();
         }
         private void Guardar()
         {
             //Convierto todos los datos a string
-            this.DatosColores = JsonConvert.SerializeObject(this.Colores);
-            this.GestorArchivosTexto.Guardar(this.DatosColores);
+            this.DatosModelos = JsonConvert.SerializeObject(this.Modelos);
+            this.GestorArchivosTexto.Guardar(this.DatosModelos);
         }
-        public List<Presentacion.Modelo.Color> Listado()
+        public List<Presentacion.Modelo.Modelo> Listado()
         {
             Leer();
-            return this.Colores.ToList();
+            return this.Modelos.ToList();
         }
-        public Presentacion.Modelo.Color Obtener(int id)
+        public Presentacion.Modelo.Modelo Obtener(int id)
         {
             Leer();
-            return this.Colores.Where(x => x.Id == id).FirstOrDefault();
+            return this.Modelos.Where(x => x.Id == id).FirstOrDefault();
         }
-        public bool Existe(Vista.Auto.Color.Nuevo Nuevo)
+        public bool Existe(Vista.Auto.Modelo.Nuevo Nuevo)
         {
-            return this.Colores.Any(x => x.Nombre == Nuevo.txtDescripcion.Text);
+            return this.Modelos.Any(x => x.Descripcion == Nuevo.txtDescripcion.Text);
         }
         public int ObtenerUltimoID()
         {
-            return Colores.Max(x => x.Id) + 1;
+            return Modelos.Max(x => x.Id) + 1;
         }
-        public void ABM(int Operacion,Vista.Auto.Color.Nuevo nuevo,DataGridView Grilla, int Id)
+        public void ABM(int Operacion, Vista.Auto.Modelo.Nuevo nuevo, DataGridView Grilla, int Id)
         {
             Leer();
-            Presentacion.Modelo.Color color = new Presentacion.Modelo.Color();
+            Presentacion.Modelo.Modelo modelo = new Presentacion.Modelo.Modelo();
             if (nuevo.cboEstado.Text == "Seleccione")
             {
                 MessageBox.Show("Debe seleccionar un estado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -68,10 +68,10 @@ namespace Presentacion.Controlador
                     case 1://Alta
                         if (Existe(nuevo) != true)
                         {
-                            color.Id = Colores.Count == 0 ? 1 : ObtenerUltimoID();
-                            color.Nombre = nuevo.txtDescripcion.Text;
-                            color.Estado = nuevo.cboEstado.Text == "Habilitado" ? false : true;
-                            this.Colores.Add(color);
+                            modelo.Id = Modelos.Count == 0 ? 1 : ObtenerUltimoID();
+                            modelo.Descripcion = nuevo.txtDescripcion.Text;
+                            modelo.Estado = nuevo.cboEstado.Text == "Habilitado" ? false : true;
+                            this.Modelos.Add(modelo);
                             Guardar();
                             Generico.LimpiarCampos(nuevo);
                             Generico.ComboBoxEnSeleccione(nuevo);

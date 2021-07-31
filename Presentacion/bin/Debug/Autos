@@ -1,0 +1,1 @@
+[{"Id":1,"Matricula":"a","Precio":1.0,"Marca":{"Id":1,"Descripcion":"Fiat","Estado":false},"Modelo":{"Id":1,"Descripcion":"2000","Estado":false},"Color":{"Id":1,"Nombre":"Negro","Estado":false},"Estado":"Disponible"}]

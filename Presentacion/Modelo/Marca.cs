@@ -10,7 +10,6 @@ namespace Presentacion.Modelo
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public Modelo Modelo { get; set; }
         public bool Estado { get; set; }
     }
 }

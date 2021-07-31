@@ -12,6 +12,7 @@ namespace Presentacion.Modelo
         public string Matricula { get; set; }
         public float Precio { get; set; }
         public Marca Marca { get; set; }
+        public Modelo Modelo { get; set; }
         public Color Color { get; set; }
         public string Estado { get; set; }
     }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion.Vista.Auto.Color
+namespace Presentacion.Vista.Auto.Modelo
 {
-    public partial class Indice : Form
+    public partial class Editar : Form
     {
-        public Indice()
+        public Editar()
         {
             InitializeComponent();
-        }
-
-        private void botonNuevo_Click(object sender, EventArgs e)
-        {
-            new Vista.Auto.Color.Nuevo();
         }
     }
 }

@@ -44,5 +44,23 @@ namespace Presentacion.Controlador
                 }
             }
         }
+        public void ComboBoxEnSeleccione(Control control) 
+        {
+            foreach (var i in control.Controls)
+            {
+                if (i is ComboBox)
+                {
+                    ((ComboBox)i).SelectedIndex=0;
+                }
+            }
+        }
+        public List<string> EstadosGenericos()
+        {
+            List<string> lista = new List<string>();
+            lista.Add("Seleccione");
+            lista.Add("Habilitado");
+            lista.Add("Inhabilitado");
+            return lista;
+        }
     }
 }

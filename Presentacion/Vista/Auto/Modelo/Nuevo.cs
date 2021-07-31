@@ -8,19 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion.Vista.Auto.Marca
+namespace Presentacion.Vista.Auto.Modelo
 {
     public partial class Nuevo : Form
     {
-        public DataGridView Marcas;
-        private Controlador.Marca Marca;
+        public DataGridView Modelos;
+        private Controlador.Modelo Modelo;
         private Controlador.Generico Generico;
 
         public Nuevo()
         {
             InitializeComponent();
             Generico = new Controlador.Generico();
-            Marca = new Controlador.Marca("Marcas");
+            Modelo = new Controlador.Modelo("Modelos");
         }
         private void Nuevo_Load(object sender, EventArgs e)
         {
@@ -33,9 +33,8 @@ namespace Presentacion.Vista.Auto.Marca
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Marca.ABM(1, this, Marcas, 0);
+            Modelo.ABM(1, this, Modelos, 0);
         }
 
-        
     }
 }

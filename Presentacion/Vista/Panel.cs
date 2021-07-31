@@ -32,11 +32,6 @@ namespace Presentacion.Vista
             Generico.SalirCancelar(null,1);
         }
 
-        private void menuColores_Click(object sender, EventArgs e)
-        {
-            new Vista.Auto.Color.Indice().Show();
-        }
-
         private void menuMarcas_Click(object sender, EventArgs e)
         {
 

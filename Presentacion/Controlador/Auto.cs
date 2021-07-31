@@ -13,21 +13,27 @@ namespace Presentacion.Controlador
         #region Archivo
         private string Archivo { get; set; }
         private Datos.GestorArchivosTexto GestorArchivosTexto { get; set; }
-        private List<Modelo.Auto> Autos { get; set; }
+        private List<Presentacion.Modelo.Auto> Autos { get; set; }
         private string DatosAutos { get; set; }
         #endregion
         private Controlador.Generico Generico;
+        private Controlador.Color Color;
+        private Controlador.Marca Marca;
+        private Controlador.Modelo Modelo;
 
         public Auto(string _Archivo)
         {
             this.Archivo = _Archivo;
             this.GestorArchivosTexto = new Datos.GestorArchivosTexto(this.Archivo);
             this.Generico = new Generico();
+            Color = new Color("Colores");
+            Marca = new Marca("Marcas");
+            Modelo = new Modelo("Modelos");
         }
         private void Leer()
         {
             this.DatosAutos = this.GestorArchivosTexto.Leer();
-            this.Autos = this.DatosAutos?.Length > 0 ? JsonConvert.DeserializeObject<List<Modelo.Auto>>(this.DatosAutos) : new List<Modelo.Auto>();
+            this.Autos = this.DatosAutos?.Length > 0 ? JsonConvert.DeserializeObject<List<Presentacion.Modelo.Auto>>(this.DatosAutos) : new List<Presentacion.Modelo.Auto>();
         }
         private void Guardar()
         {
@@ -35,12 +41,12 @@ namespace Presentacion.Controlador
             this.DatosAutos = JsonConvert.SerializeObject(this.Autos);
             this.GestorArchivosTexto.Guardar(this.DatosAutos);
         }
-        public List<Modelo.Auto> Listado()
+        public List<Presentacion.Modelo.Auto> Listado()
         {
             Leer();
             return this.Autos.ToList();
         }
-        public Modelo.Auto Obtener(int id)
+        public Presentacion.Modelo.Auto Obtener(int id)
         {
             Leer();
             return this.Autos.Where(x => x.Id == id).FirstOrDefault();
@@ -53,51 +59,50 @@ namespace Presentacion.Controlador
         {
             return Autos.Max(x => x.Id) + 1;
         }
-        public void ABM(int Operacion, Vista.Auto.Nuevo Nuevo, Vista.Auto.Editar Editar, int Id,int IdColor,int IdMarca, DataGridView GrillaAutos)
+        public void ABM(int Operacion, Vista.Auto.Nuevo Nuevo, Vista.Auto.Editar Editar, int Id,int IdColor,int IdMarca, int IdModelo, DataGridView GrillaMarcas, DataGridView GrillaColores,DataGridView GrillaAutos, DataGridView GrillaModelos)
         {
             Leer();
             switch (Operacion)
             {
                 case 1://Alta
-                    Modelo.Auto Auto = new Modelo.Auto();
-                    if (Existe(Nuevo) != true)
+                    if (GrillaColores.Rows.Count == 0)
                     {
-                        Auto.Id = Autos.Count >0 ? ObtenerUltimoID():1;
-                        Auto.Matricula = Nuevo.txtMatricula.Text;
-                        Auto.Precio = float.Parse(Nuevo.txtPrecio.Text);
-                        /*Contiar Mañana*/
-                        Auto.Color = Color;
-                        Auto.Marca = Marca;
-                        Auto.Estado = Nuevo.txtEstado.Text;
-                        this.Autos.Add(Auto);
-                        Guardar();
-                        Generico.LimpiarCampos(Nuevo);
-                        GrillaAutos.DataSource = Listado();
+                        MessageBox.Show("No hay colores registrados", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if (GrillaMarcas.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No hay marcas registrados", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (GrillaModelos.Rows.Count == 0)
+                            {
+                                MessageBox.Show("No hay modelos de autos registrados", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                Presentacion.Modelo.Auto Auto = new Presentacion.Modelo.Auto();
+                                if (Existe(Nuevo) != true)
+                                {
+                                    Auto.Id = Autos.Count > 0 ? ObtenerUltimoID() : 1;
+                                    Auto.Matricula = Nuevo.txtMatricula.Text;
+                                    Auto.Precio = float.Parse(Nuevo.txtPrecio.Text);
+                                    Auto.Color = Color.Obtener(IdColor);
+                                    Auto.Marca = Marca.Obtener(IdMarca);
+                                    Auto.Modelo = Modelo.Obtener(IdModelo);
+                                    Auto.Estado = Nuevo.txtEstado.Text;
+                                    this.Autos.Add(Auto);
+                                    Guardar();
+                                    Generico.LimpiarCampos(Nuevo);
+                                    GrillaAutos.DataSource = Listado();
+                                }
+                            }
+                        }
                     }
                     break;
-                case 2://Edicion
-                    /*
-                    var _Articulo = ObtenerArticulo(Id);
-                    _Articulo.Descripcion = ArticuloEditar.txtDescripcion.Text;
-                    _Articulo.PrecioCosto = Convert.ToDouble(ArticuloEditar.txtPrecioCosto.Text);
-                    _Articulo.PrecioVenta = Convert.ToDouble(ArticuloEditar.txtPrecioVenta.Text);
-                    _Articulo.Cantidad = Convert.ToInt32(ArticuloEditar.txtCantidad.Text);
-                    _Articulo.Ganancia = Convert.ToDouble(ArticuloEditar.txtGanancia.Text);
-                    Guardar();
-                    MessageBox.Show("Articulo Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Grilla.DataSource = ListadoInicial();
-                    */
-                    break;
-                case 3://Baja
-                    /*
-                    var _Arti = ObtenerArticulo(Id);
-                    this.ListaArticulos.Remove(_Arti);
-                    Guardar();
-                    MessageBox.Show("Articulo Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Grilla.DataSource = ListadoInicial();
-                    */
-                    break;
-            }
+            }            
         }
     }
 }
