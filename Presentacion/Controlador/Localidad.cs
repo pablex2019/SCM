@@ -64,7 +64,7 @@ namespace Presentacion.Controlador
                     {
                         if (Existe(Nuevo) != true)
                         {
-                            Localidad.Id = ObtenerUltimoID();
+                            Localidad.Id = Localidades.Count>0 ? ObtenerUltimoID():1;
                             Localidad.CodigoPostal = Nuevo.txtCodigoPostal.Text;
                             Localidad.Nombre = Nuevo.txtNombre.Text;
                             this.Localidades.Add(Localidad);
@@ -72,16 +72,6 @@ namespace Presentacion.Controlador
                             Generico.LimpiarCampos(Nuevo);
                             Grilla.DataSource = Listado();
                         }
-                    }
-                    else
-                    {
-                        Localidad.Id = 1;
-                        Localidad.CodigoPostal = Nuevo.txtCodigoPostal.Text;
-                        Localidad.Nombre = Nuevo.txtNombre.Text;
-                        this.Localidades.Add(Localidad);
-                        Guardar();
-                        Generico.LimpiarCampos(Nuevo);
-                        Grilla.DataSource = Listado();
                     }
                     break;
                 case 2://Edicion

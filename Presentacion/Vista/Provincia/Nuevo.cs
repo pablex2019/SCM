@@ -12,6 +12,8 @@ namespace Presentacion.Vista.Provincia
 {
     public partial class Nuevo : Form
     {
+        public DataGridView Provincias;
+        private Controlador.Provincia Provincia;
         private Controlador.Localidad Localidad;
         private Controlador.Generico Generico;
 
@@ -20,6 +22,7 @@ namespace Presentacion.Vista.Provincia
             InitializeComponent();
             Generico = new Controlador.Generico();
             Localidad = new Controlador.Localidad("Localidades");
+            Provincia = new Controlador.Provincia("Provincias");
         }
         private void Nuevo_Load(object sender, EventArgs e)
         {
@@ -37,6 +40,9 @@ namespace Presentacion.Vista.Provincia
             Nuevo.Show();
         }
 
-        
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Provincia.ABM(1, this, null, 0, Provincias,dataGridView1);
+        }
     }
 }

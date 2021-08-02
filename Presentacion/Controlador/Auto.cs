@@ -96,6 +96,7 @@ namespace Presentacion.Controlador
                                     this.Autos.Add(Auto);
                                     Guardar();
                                     Generico.LimpiarCampos(Nuevo);
+                                    Generico.ElementoAgregado("Auto");
                                     GrillaAutos.DataSource = Listado();
                                 }
                             }

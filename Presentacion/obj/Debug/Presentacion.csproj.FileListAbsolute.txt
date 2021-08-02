@@ -24,3 +24,12 @@ C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.csproj.CopyC
 C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Auto.Modelo.Nuevo.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Provincia.Editar.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Cliente.Indice.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Empleado.Indice.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Cliente.Nuevo.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Empleado.Nuevo.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Pedido.Indice.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Empleado.Perfil.Nuevo.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Pedido.Nuevo.resources
+C:\Users\proda\source\repos\SCM\Presentacion\obj\Debug\Presentacion.Vista.Pedido.Anticipo.Nuevo.resources

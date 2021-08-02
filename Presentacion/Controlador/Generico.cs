@@ -54,6 +54,16 @@ namespace Presentacion.Controlador
                 }
             }
         }
+        public void FechaActual(Control control)
+        {
+            foreach (var i in control.Controls)
+            {
+                if (i is DateTimePicker)
+                {
+                    ((DateTimePicker)i).Value = DateTime.Now;
+                }
+            }
+        }
         public List<string> EstadosGenericos()
         {
             List<string> lista = new List<string>();
@@ -61,6 +71,28 @@ namespace Presentacion.Controlador
             lista.Add("Habilitado");
             lista.Add("Inhabilitado");
             return lista;
+        }
+        public List<string> EstadoCivil()
+        {
+            List<string> lista = new List<string>();
+            lista.Add("Seleccione");
+            lista.Add("Soltero/a");
+            lista.Add("Casaado/a");
+            lista.Add("Divorciado/a");
+            lista.Add("Viudo/a");
+            return lista;
+        }
+        public List<string> EstadoAnticipoYCuotas()
+        {
+            List<string> lista = new List<string>();
+            lista.Add("Seleccione");
+            lista.Add("Pagado");
+            lista.Add("Impago");
+            return lista;
+        }
+        public void ElementoAgregado(string elemento)
+        {
+            MessageBox.Show(elemento + " Agregado/a","",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

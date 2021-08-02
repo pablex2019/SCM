@@ -8,7 +8,7 @@ namespace Presentacion.Modelo
 {
     public class Usuario
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Clave { get; set; }
         public Perfil Perfil { get; set; }

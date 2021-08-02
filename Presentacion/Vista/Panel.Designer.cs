@@ -30,10 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuAutos = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEmpleados = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProvincias = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPedidos = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financiacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,12 +44,12 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAutos,
-            this.empleadosToolStripMenuItem,
-            this.clientesToolStripMenuItem,
+            this.mnuEmpleados,
+            this.mnuClientes,
             this.menuProvincias,
-            this.pedidosToolStripMenuItem,
-            this.ventasToolStripMenuItem,
+            this.mnuPedidos,
             this.financiacionesToolStripMenuItem,
+            this.ventasToolStripMenuItem,
             this.menuSalir});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -64,17 +64,19 @@
             this.menuAutos.Text = "Autos";
             this.menuAutos.Click += new System.EventHandler(this.menuAutos_Click);
             // 
-            // empleadosToolStripMenuItem
+            // mnuEmpleados
             // 
-            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.mnuEmpleados.Name = "mnuEmpleados";
+            this.mnuEmpleados.Size = new System.Drawing.Size(77, 20);
+            this.mnuEmpleados.Text = "Empleados";
+            this.mnuEmpleados.Click += new System.EventHandler(this.mnuEmpleados_Click);
             // 
-            // clientesToolStripMenuItem
+            // mnuClientes
             // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.mnuClientes.Name = "mnuClientes";
+            this.mnuClientes.Size = new System.Drawing.Size(61, 20);
+            this.mnuClientes.Text = "Clientes";
+            this.mnuClientes.Click += new System.EventHandler(this.mnuClientes_Click);
             // 
             // menuProvincias
             // 
@@ -83,11 +85,12 @@
             this.menuProvincias.Text = "Provincias";
             this.menuProvincias.Click += new System.EventHandler(this.menuProvincias_Click);
             // 
-            // pedidosToolStripMenuItem
+            // mnuPedidos
             // 
-            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.mnuPedidos.Name = "mnuPedidos";
+            this.mnuPedidos.Size = new System.Drawing.Size(61, 20);
+            this.mnuPedidos.Text = "Pedidos";
+            this.mnuPedidos.Click += new System.EventHandler(this.mnuPedidos_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -133,10 +136,10 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuAutos;
-        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuEmpleados;
+        private System.Windows.Forms.ToolStripMenuItem mnuClientes;
         private System.Windows.Forms.ToolStripMenuItem menuProvincias;
-        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuPedidos;
         private System.Windows.Forms.ToolStripMenuItem financiacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuSalir;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;

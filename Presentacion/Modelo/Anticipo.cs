@@ -11,7 +11,6 @@ namespace Presentacion.Modelo
         public int Id { get; set; }
         public int Numero { get; set; }
         public double Importe { get; set; }
-        public Pedido Pedido { get; set; }
-        public int Estado { get; set; }
+        public bool Estado { get; set; }
     }
 }

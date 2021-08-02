@@ -46,5 +46,20 @@ namespace Presentacion.Vista
         {
             new Vista.Provincia.Indice().Show();
         }
+
+        private void mnuEmpleados_Click(object sender, EventArgs e)
+        {
+            new Vista.Empleado.Indice().Show();
+        }
+
+        private void mnuClientes_Click(object sender, EventArgs e)
+        {
+            new Vista.Cliente.Indice().Show();
+        }
+
+        private void mnuPedidos_Click(object sender, EventArgs e)
+        {
+            new Vista.Pedido.Indice().Show();
+        }
     }
 }
