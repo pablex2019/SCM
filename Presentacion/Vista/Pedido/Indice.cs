@@ -12,9 +12,12 @@ namespace Presentacion.Vista.Pedido
 {
     public partial class Indice : Form
     {
+        private Controlador.Pedido Pedido;
+
         public Indice()
         {
             InitializeComponent();
+            Pedido = new Controlador.Pedido("Pedidos");
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -22,6 +25,11 @@ namespace Presentacion.Vista.Pedido
             Vista.Pedido.Nuevo nuevo = new Nuevo();
             nuevo.Pedidos = dataGridView1;
             nuevo.Show();
+        }
+
+        private void Indice_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Pedido.Listado();
         }
     }
 }

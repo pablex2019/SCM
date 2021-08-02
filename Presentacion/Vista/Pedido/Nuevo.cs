@@ -28,12 +28,13 @@ namespace Presentacion.Vista.Pedido
             Cliente = new Controlador.Cliente("Clientes");
             Auto = new Controlador.Auto("Autos");
             Pedido = new Controlador.Pedido("Pedidos");
-            Anticipo = new Controlador.Anticipo("Anticipo");
+            Anticipo = new Controlador.Anticipo("Anticipos");
             Generico = new Controlador.Generico();
         }
 
         private void Nuevo_Load(object sender, EventArgs e)
         {
+            txtNumero.Text = Pedido.ObtenerNumeroUltimoPedidoRegistrado().ToString();
             dgvEmpleados.DataSource = Empleado.Listado();
             dgvClientes.DataSource = Cliente.Listado();
             dgvAutos.DataSource = Auto.Listado();

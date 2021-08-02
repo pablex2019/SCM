@@ -34,8 +34,7 @@
             this.mnuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProvincias = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPedidos = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.financiacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,8 +47,7 @@
             this.mnuClientes,
             this.menuProvincias,
             this.mnuPedidos,
-            this.financiacionesToolStripMenuItem,
-            this.ventasToolStripMenuItem,
+            this.mnuVentas,
             this.menuSalir});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -92,17 +90,12 @@
             this.mnuPedidos.Text = "Pedidos";
             this.mnuPedidos.Click += new System.EventHandler(this.mnuPedidos_Click);
             // 
-            // ventasToolStripMenuItem
+            // mnuVentas
             // 
-            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ventasToolStripMenuItem.Text = "Ventas";
-            // 
-            // financiacionesToolStripMenuItem
-            // 
-            this.financiacionesToolStripMenuItem.Name = "financiacionesToolStripMenuItem";
-            this.financiacionesToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.financiacionesToolStripMenuItem.Text = "Financiaciones";
+            this.mnuVentas.Name = "mnuVentas";
+            this.mnuVentas.Size = new System.Drawing.Size(53, 20);
+            this.mnuVentas.Text = "Ventas";
+            this.mnuVentas.Click += new System.EventHandler(this.mnuVentas_Click);
             // 
             // menuSalir
             // 
@@ -140,8 +133,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuClientes;
         private System.Windows.Forms.ToolStripMenuItem menuProvincias;
         private System.Windows.Forms.ToolStripMenuItem mnuPedidos;
-        private System.Windows.Forms.ToolStripMenuItem financiacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuVentas;
         private System.Windows.Forms.ToolStripMenuItem menuSalir;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
     }
 }

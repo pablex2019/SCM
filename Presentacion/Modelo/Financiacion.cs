@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Presentacion.Modelo
 {
-    public class OpcionesFinanciacion
+    public class Financiacion
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }

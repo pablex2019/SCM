@@ -55,9 +55,32 @@ namespace Presentacion.Controlador
         {
             return this.Pedidos.Any(x => x.Numero == Convert.ToInt32(Nuevo.txtNumero.Text));
         }
+        public int ObtenerNumeroUltimoPedidoRegistrado()
+        {
+            Leer();
+            return Pedidos.Count == 0 ? 1 : Pedidos.Max(x => x.Numero);
+        }
         public int ObtenerUltimoID()
         {
             return Pedidos.Max(x => x.Id) + 1;
+        }
+        public int ObtenerCantidadAnticipos(int IdPedido)
+        {
+            Leer();
+            var _pedido = Pedidos.First(x => x.Id==IdPedido);
+            return _pedido.Anticipos.Count;
+        }
+
+        public double ObtenerSumaTotalImporteAnticipos(int IdPedido)
+        {
+            Leer();
+            double suma = 0.0;
+            var _pedido = Pedidos.First(x => x.Id == IdPedido);
+            foreach(var i in _pedido.Anticipos)
+            {
+                suma = suma + i.Importe;
+            }
+            return suma;
         }
         public void ABM(int Operacion, Vista.Pedido.Nuevo Nuevo,int Id, int IdAuto, int IdCliente, int IdEmpleado, DataGridView GrillaAutos,DataGridView GrillaClientes, DataGridView GrillaEmpleados, DataGridView GrillaPedidos,DataGridView GrillaAnticipos)
         {

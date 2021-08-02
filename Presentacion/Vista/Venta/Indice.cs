@@ -16,5 +16,24 @@ namespace Presentacion.Vista.Venta
         {
             InitializeComponent();
         }
+
+        private void btnVerVentas_Click(object sender, EventArgs e)
+        {
+            Vista.LineaDeVentas.Ver ver = new LineaDeVentas.Ver();
+            ver.Ventas = dgvVentas;
+            ver.Show();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Vista.Venta.Nuevo nuevo = new Vista.Venta.Nuevo();
+            nuevo.Ventas = dgvVentas;
+            nuevo.Show();
+        }
+
+        private void Indice_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

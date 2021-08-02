@@ -31,12 +31,6 @@ namespace Presentacion.Vista
         {
             Generico.SalirCancelar(null,1);
         }
-
-        private void menuMarcas_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Panel_Load(object sender, EventArgs e)
         {
 
@@ -60,6 +54,16 @@ namespace Presentacion.Vista
         private void mnuPedidos_Click(object sender, EventArgs e)
         {
             new Vista.Pedido.Indice().Show();
+        }
+
+        private void mnuVentas_Click(object sender, EventArgs e)
+        {
+            new Vista.Venta.Indice().Show();
+        }
+
+        private void mnuLineasDeVentas_Click(object sender, EventArgs e)
+        {
+            new Vista.LineaDeVentas.Ver().Show();
         }
     }
 }
