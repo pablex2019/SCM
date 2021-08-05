@@ -19,7 +19,9 @@ namespace Presentacion.Vista.Provincia
 
         private void botonNuevo_Click(object sender, EventArgs e)
         {
-            new Vista.Provincia.Nuevo().Show();
+            Vista.Provincia.Nuevo nuevo = new Nuevo();
+            nuevo.Provincias = dataGridView1;
+            nuevo.Show();
         }
     }
 }

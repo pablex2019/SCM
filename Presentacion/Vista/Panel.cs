@@ -20,26 +20,17 @@ namespace Presentacion.Vista
             Generico = new Controlador.Generico();
         }
 
+        #region Auto
         private void menuAutos_Click(object sender, EventArgs e)
         {
             new Vista.Auto.Indice().Show();
         }
+        #endregion
 
         private void menuSalir_Click(object sender, EventArgs e)
         {
             Generico.SalirCancelar(null,1);
         }
-
-        private void menuColores_Click(object sender, EventArgs e)
-        {
-            new Vista.Auto.Color.Indice().Show();
-        }
-
-        private void menuMarcas_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Panel_Load(object sender, EventArgs e)
         {
 
@@ -48,6 +39,31 @@ namespace Presentacion.Vista
         private void menuProvincias_Click(object sender, EventArgs e)
         {
             new Vista.Provincia.Indice().Show();
+        }
+
+        private void mnuEmpleados_Click(object sender, EventArgs e)
+        {
+            new Vista.Empleado.Indice().Show();
+        }
+
+        private void mnuClientes_Click(object sender, EventArgs e)
+        {
+            new Vista.Cliente.Indice().Show();
+        }
+
+        private void mnuPedidos_Click(object sender, EventArgs e)
+        {
+            new Vista.Pedido.Indice().Show();
+        }
+
+        private void mnuVentas_Click(object sender, EventArgs e)
+        {
+            new Vista.Venta.Indice().Show();
+        }
+
+        private void mnuLineasDeVentas_Click(object sender, EventArgs e)
+        {
+            new Vista.LineaDeVentas.Ver().Show();
         }
     }
 }

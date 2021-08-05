@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
             this.botonCancelar = new System.Windows.Forms.Button();
             this.botonGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,12 +45,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Descripcion";
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtDescripcion.Location = new System.Drawing.Point(16, 30);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(156, 20);
+            this.txtDescripcion.TabIndex = 1;
             // 
             // label2
             // 
@@ -61,13 +61,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Estado";
             // 
-            // comboBox1
+            // cboEstado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Location = new System.Drawing.Point(16, 70);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(156, 21);
+            this.cboEstado.TabIndex = 3;
             // 
             // botonCancelar
             // 
@@ -98,14 +98,15 @@
             this.ControlBox = false;
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonGuardar);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Color - Nuevo";
+            this.Load += new System.EventHandler(this.Nuevo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,10 +115,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button botonCancelar;
         private System.Windows.Forms.Button botonGuardar;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.ComboBox cboEstado;
     }
 }

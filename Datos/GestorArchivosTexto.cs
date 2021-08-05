@@ -45,5 +45,10 @@ namespace Datos
                 fs.Write(info, 0, info.Length);
             }
         }
+        public void Eliminar(string archivo)
+        {
+            //Borra el archivo
+            File.Delete(archivo);
+        }
     }
 }

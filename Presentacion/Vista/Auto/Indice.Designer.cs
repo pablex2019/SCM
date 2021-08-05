@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.botonNuevo = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -54,15 +54,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(533, 136);
             this.dataGridView1.TabIndex = 1;
             // 
-            // botonNuevo
+            // btnNuevo
             // 
-            this.botonNuevo.Location = new System.Drawing.Point(16, 181);
-            this.botonNuevo.Name = "botonNuevo";
-            this.botonNuevo.Size = new System.Drawing.Size(75, 23);
-            this.botonNuevo.TabIndex = 2;
-            this.botonNuevo.Text = "Nuevo";
-            this.botonNuevo.UseVisualStyleBackColor = true;
-            this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
+            this.btnNuevo.Location = new System.Drawing.Point(16, 181);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // button2
             // 
@@ -95,15 +95,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(567, 216);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.botonNuevo);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Indice";
-            this.Text = "Indice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Autos - Indice";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,7 +118,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button botonNuevo;
+        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

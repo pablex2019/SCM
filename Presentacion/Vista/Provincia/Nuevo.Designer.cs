@@ -33,10 +33,10 @@
             this.botonNuevaLocalidad = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.botonCancelar = new System.Windows.Forms.Button();
-            this.botonGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,12 +85,12 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Lista de Localidades";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 20);
-            this.textBox1.TabIndex = 17;
+            this.txtNombre.Location = new System.Drawing.Point(15, 26);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(237, 20);
+            this.txtNombre.TabIndex = 17;
             // 
             // label1
             // 
@@ -101,24 +101,25 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Nombre";
             // 
-            // botonCancelar
+            // btnCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(96, 238);
-            this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.botonCancelar.TabIndex = 26;
-            this.botonCancelar.Text = "Cancelar";
-            this.botonCancelar.UseVisualStyleBackColor = true;
-            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(96, 238);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
-            // botonGuardar
+            // btnGuardar
             // 
-            this.botonGuardar.Location = new System.Drawing.Point(15, 238);
-            this.botonGuardar.Name = "botonGuardar";
-            this.botonGuardar.Size = new System.Drawing.Size(75, 23);
-            this.botonGuardar.TabIndex = 25;
-            this.botonGuardar.Text = "Guardar";
-            this.botonGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(15, 238);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 25;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Nuevo
             // 
@@ -126,17 +127,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(268, 278);
-            this.ControlBox = false;
-            this.Controls.Add(this.botonCancelar);
-            this.Controls.Add(this.botonGuardar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.botonNuevaLocalidad);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Provincia - Nuevo";
@@ -154,9 +155,9 @@
         private System.Windows.Forms.Button botonNuevaLocalidad;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button botonCancelar;
-        private System.Windows.Forms.Button botonGuardar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        public System.Windows.Forms.TextBox txtNombre;
     }
 }

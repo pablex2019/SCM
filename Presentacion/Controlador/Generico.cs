@@ -9,6 +9,12 @@ namespace Presentacion.Controlador
 {
     public class Generico
     {
+        private Datos.GestorArchivosTexto GestorArchivosTexto;
+
+        public Generico()
+        {
+            GestorArchivosTexto = new Datos.GestorArchivosTexto("generico");
+        }
         public void SalirCancelar(Form Formulario,int opcion)
         {
             switch (opcion)
@@ -18,6 +24,7 @@ namespace Presentacion.Controlador
                     switch (ResultSalir)
                     {
                         case DialogResult.Yes:
+                            GestorArchivosTexto.Eliminar("Colores");
                             Application.Exit();
                             break;
                     }
@@ -43,6 +50,56 @@ namespace Presentacion.Controlador
                     ((TextBox)i).Clear();
                 }
             }
+        }
+        public void ComboBoxEnSeleccione(Control control) 
+        {
+            foreach (var i in control.Controls)
+            {
+                if (i is ComboBox)
+                {
+                    ((ComboBox)i).SelectedIndex=0;
+                }
+            }
+        }
+        public void FechaActual(Control control)
+        {
+            foreach (var i in control.Controls)
+            {
+                if (i is DateTimePicker)
+                {
+                    ((DateTimePicker)i).Value = DateTime.Now;
+                }
+            }
+        }
+        public List<string> EstadosGenericos()
+        {
+            List<string> lista = new List<string>();
+            lista.Add("Seleccione");
+            lista.Add("Habilitado");
+            lista.Add("Inhabilitado");
+            return lista;
+        }
+        public List<string> EstadoCivil()
+        {
+            List<string> lista = new List<string>();
+            lista.Add("Seleccione");
+            lista.Add("Soltero/a");
+            lista.Add("Casaado/a");
+            lista.Add("Divorciado/a");
+            lista.Add("Viudo/a");
+            return lista;
+        }
+        public List<string> EstadoAnticipoYCuotas()
+        {
+            List<string> lista = new List<string>();
+            lista.Add("Seleccione");
+            lista.Add("Pagado");
+            lista.Add("Impago");
+            return lista;
+        }
+        public void ElementoAgregado(string elemento)
+        {
+            MessageBox.Show(elemento + " Agregado/a","",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

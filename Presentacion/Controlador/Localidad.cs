@@ -13,21 +13,23 @@ namespace Presentacion.Controlador
         #region Archivo
         private string Archivo { get; set; }
         private Datos.GestorArchivosTexto GestorArchivosTexto { get; set; }
-        private List<Modelo.Localidad> Localidades { get; set; }
+        private List<Presentacion.Modelo.Localidad> Localidades { get; set; }
         private string DatosLocalidades { get; set; }
         #endregion
         private Controlador.Generico Generico;
+        private Controlador.Provincia Provincia;
 
         public Localidad(string _Archivo)
         {
             this.Archivo = _Archivo;
             this.GestorArchivosTexto = new Datos.GestorArchivosTexto(this.Archivo);
             this.Generico = new Generico();
+            Provincia = new Provincia("Provincias");
         }
         private void Leer()
         {
             this.DatosLocalidades = this.GestorArchivosTexto.Leer();
-            this.Localidades = this.DatosLocalidades?.Length > 0 ? JsonConvert.DeserializeObject<List<Modelo.Localidad>>(this.DatosLocalidades) : new List<Modelo.Localidad>();
+            this.Localidades = this.DatosLocalidades?.Length > 0 ? JsonConvert.DeserializeObject<List<Presentacion.Modelo.Localidad>>(this.DatosLocalidades) : new List<Presentacion.Modelo.Localidad>();
         }
         private void Guardar()
         {
@@ -35,12 +37,12 @@ namespace Presentacion.Controlador
             this.DatosLocalidades = JsonConvert.SerializeObject(this.Localidades);
             this.GestorArchivosTexto.Guardar(this.DatosLocalidades);
         }
-        public List<Modelo.Localidad> Listado()
+        public List<Presentacion.Modelo.Localidad> Listado()
         {
             Leer();
             return this.Localidades.ToList();
         }
-        public Modelo.Localidad Obtener(int id)
+        public Presentacion.Modelo.Localidad Obtener(int id)
         {
             Leer();
             return this.Localidades.Where(x => x.Id == id).FirstOrDefault();
@@ -59,29 +61,20 @@ namespace Presentacion.Controlador
             switch (Operacion)
             {
                 case 1://Alta
-                    Modelo.Localidad Localidad = new Modelo.Localidad();
+                    Presentacion.Modelo.Localidad Localidad = new Presentacion.Modelo.Localidad();
                     if (Localidades.Count > 0)
                     {
                         if (Existe(Nuevo) != true)
                         {
-                            Localidad.Id = ObtenerUltimoID();
+                            Localidad.Id = Localidades.Count>0 ? ObtenerUltimoID():1;
                             Localidad.CodigoPostal = Nuevo.txtCodigoPostal.Text;
                             Localidad.Nombre = Nuevo.txtNombre.Text;
+                            Localidad.Provincia = Provincia.Obtener(Id);
                             this.Localidades.Add(Localidad);
                             Guardar();
                             Generico.LimpiarCampos(Nuevo);
                             Grilla.DataSource = Listado();
                         }
-                    }
-                    else
-                    {
-                        Localidad.Id = 1;
-                        Localidad.CodigoPostal = Nuevo.txtCodigoPostal.Text;
-                        Localidad.Nombre = Nuevo.txtNombre.Text;
-                        this.Localidades.Add(Localidad);
-                        Guardar();
-                        Generico.LimpiarCampos(Nuevo);
-                        Grilla.DataSource = Listado();
                     }
                     break;
                 case 2://Edicion
