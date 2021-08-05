@@ -9,6 +9,12 @@ namespace Presentacion.Controlador
 {
     public class Generico
     {
+        private Datos.GestorArchivosTexto GestorArchivosTexto;
+
+        public Generico()
+        {
+            GestorArchivosTexto = new Datos.GestorArchivosTexto("generico");
+        }
         public void SalirCancelar(Form Formulario,int opcion)
         {
             switch (opcion)
@@ -18,6 +24,7 @@ namespace Presentacion.Controlador
                     switch (ResultSalir)
                     {
                         case DialogResult.Yes:
+                            GestorArchivosTexto.Eliminar("Colores");
                             Application.Exit();
                             break;
                     }

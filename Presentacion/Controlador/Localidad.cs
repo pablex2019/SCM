@@ -17,12 +17,14 @@ namespace Presentacion.Controlador
         private string DatosLocalidades { get; set; }
         #endregion
         private Controlador.Generico Generico;
+        private Controlador.Provincia Provincia;
 
         public Localidad(string _Archivo)
         {
             this.Archivo = _Archivo;
             this.GestorArchivosTexto = new Datos.GestorArchivosTexto(this.Archivo);
             this.Generico = new Generico();
+            Provincia = new Provincia("Provincias");
         }
         private void Leer()
         {
@@ -67,6 +69,7 @@ namespace Presentacion.Controlador
                             Localidad.Id = Localidades.Count>0 ? ObtenerUltimoID():1;
                             Localidad.CodigoPostal = Nuevo.txtCodigoPostal.Text;
                             Localidad.Nombre = Nuevo.txtNombre.Text;
+                            Localidad.Provincia = Provincia.Obtener(Id);
                             this.Localidades.Add(Localidad);
                             Guardar();
                             Generico.LimpiarCampos(Nuevo);
