@@ -66,7 +66,6 @@ namespace Presentacion.Controlador
         }
         public List<Presentacion.Modelo.Cuota> CalcularValorCuotas(int IdOpcionFinanciacion, string CantidadAnticipos, string ImporteAnticipos, string Propuesta,Vista.Venta.Nuevo nuevo,int IdPedido,DataGridView GrillaVentas)
         {
-            //List<Presentacion.Modelo.Cuota> lista = new List<Presentacion.Modelo.Cuota>();
             Presentacion.Modelo.Venta venta = new Presentacion.Modelo.Venta();
             venta.Cuotas = new List<Presentacion.Modelo.Cuota>();
 
